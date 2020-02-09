@@ -1,6 +1,6 @@
 import os
 import tarfile
-import urllib
+import urllib.request
 
 DOWNLOAD_ROOT = "http://spamassassin.apache.org/old/publiccorpus/"
 HAM_URL = DOWNLOAD_ROOT + "20030228_easy_ham.tar.bz2"
@@ -17,3 +17,6 @@ def spam_data(spam_url=SPAM_URL,spam_path=SPAM_PATH):
         tar_file=tarfile.open(path)
         tar_file.extractall(path=SPAM_PATH)
         tar_file.close()
+spam_data()
+
+# Loading all the emails
